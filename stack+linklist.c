@@ -15,14 +15,15 @@ int isEmpty();
 
 int main(){
      int choice, item;
-    while (1)
-    {
-        printf("\n1.push\n");
+    printf("\n1.push\n");
         printf("2.pop\n");
         printf("3.Display the top element\n");
         printf("4.Display all stack element\n");
 
         printf("5.Quit");
+    while (1)
+    {
+        
         printf("\nEnter your choice: ");
         scanf("%d", &choice);
         switch (choice)
@@ -58,6 +59,7 @@ if (tmp==NULL)
     printf("\nStack Overflow\n");
     return ;
 }
+printf(" Element : %d is pushed",item); 
 tmp->data = item;
 tmp->next = top;
 top = tmp;
@@ -80,7 +82,7 @@ int peek(){
     if (isEmpty())
     {
           printf("\nStack Underflow\n");
-          exit(1);
+          return 0;
     }
     return top->data;
 }
